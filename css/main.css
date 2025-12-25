@@ -658,19 +658,29 @@ body {
 }
 
 .competency-card__description {
+  display: -webkit-box;
+  display: -moz-box;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.2;
   color: var(--text);
   max-height: 54px;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
   margin-bottom: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  transition: max-height 0.3s ease;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
 }
 
 .competency-card__description.expanded {
   max-height: 500px;
+  line-clamp: none;
+  -webkit-line-clamp: none;
 }
 
 .competency-card__link {
